@@ -1,0 +1,228 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    line-height: 1.6;
+    min-height: 100vh;
+    margin: 0;
+}
+
+
+/* Header Styling */
+/* Header Styling for Personal Assistant Theme */
+header {
+    background: linear-gradient(135deg, #4CAF50, #2e8b57);
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 3px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+header p {
+    font-size: 1.2em;
+    font-weight: 300;
+    color: #e0e0e0;
+}
+
+
+.logo {
+    width: 80px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes the logo circular for a friendly look */
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 2.2em;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-bottom: 0;
+}
+
+}
+/* Form Styling */
+form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    margin: 30px auto;
+    transition: transform 0.3s;
+}
+
+form:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
+}
+
+label {
+    font-weight: 500;
+    margin-top: 15px;
+    display: block;
+}
+
+input[type="text"], input[type="date"] {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    margin: 8px 0 20px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="date"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="date"] {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 1em;
+}
+
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+.button-container button {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #4CAF50, #2e8b57);
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.button-container button:hover {
+    background: linear-gradient(135deg, #2e8b57, #4CAF50);
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+}
+
+/* Task Output Styling */
+#task-output {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    text-align: left;
+}
+
+#task-output h2 {
+    color: #4CAF50;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+#task-output p {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Footer Styling */
+footer {
+    margin-top: auto;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+/* Premium Feature Section */
+#premium-feature {
+    margin-top: 50px;
+    padding: 25px;
+    background-color: #e7f5e8;
+    border: 1px solid #c4e1c5;
+    border-radius: 8px;
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#premium-feature h2 {
+    color: #2e8b57;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+#premium-feature p {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#premium-feature button {
+    padding: 12px 25px;
+    background: #2e8b57;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background 0.3s;
+}
+
+#premium-feature button:hover {
+    background: #4CAF50;
+}
+
