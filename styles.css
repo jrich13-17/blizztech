@@ -225,4 +225,27 @@ footer {
 #premium-feature button:hover {
     background: #4CAF50;
 }
+#comments {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#comments h2 {
+    color: #4CAF50;
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#comments p {
+    text-align: center;
+    color: #555;
+    margin-bottom: 20px;
+}
 
