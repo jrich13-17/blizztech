@@ -62,8 +62,6 @@
     <p>Want a hassle-free way to achieve your goals? For just $2.99 a month, we’ll help you stay on track by sending you daily tasks, including the best times to work on them. No more daily planning—just focus on accomplishing your goals with a ready-made, optimized schedule.</p>
     <button onclick="showInterest()">Show My Tasks in My Calendar</button>
 </section>
-<div id="disqus_thread"></div>
-<script>
 <!-- Comment Section -->
 <section id="comments">
     <h2>Leave Your Feedback</h2>
@@ -72,12 +70,14 @@
     <script>
         (function() { // DON'T EDIT BELOW THIS LINE
             var d = document, s = d.createElement('script');
-            <script id="dsq-count-scr" src="//https-jrich13-17-github-io-blizztech.disqus.com/count.js" async></script>
+            s.src = 'https://https-jrich13-17-github-io-blizztech.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
         })();
     </script>
     <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+</section>
+
 </section>
 
 </body>
