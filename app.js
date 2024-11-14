@@ -102,5 +102,58 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+// Replace with your actual client ID and API key
+const CLIENT_ID = "92182400022-h5mb0g8l23bf9hjk8ops7pvemqkaurds.apps.googleusercontent.com";
+const API_KEY = "YOUR_API_KEY"; // Note: Create an API key in Google Console if not done
+
+// Authorization scopes for Google Calendar
+const DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
+const SCOPES = "https://www.googleapis.com/auth/calendar.events";
+
+// Initialize Google API client with your client_id
+function handleClientLoad() {
+    gapi.load("client:auth2", initClient);
+}
+
+function initClient() {
+    gapi.client.init({
+        apiKey: API_KEY,
+        clientId: CLIENT_ID,
+        discoveryDocs: DISCOVERY_DOCS,
+        scope: SCOPES
+    }).then(() => {
+        // Check sign-in status
+        if (!gapi.auth2.getAuthInstance().isSignedIn.get()) {
+            gapi.auth2.getAuthInstance().signIn();
+        }
+    }).catch(error => {
+        console.error("Error during client initialization", error);
+    });
+}
+
+// Load the client
+handleClientLoad();
+function addToGoogleCalendar(taskName, taskDate) {
+    // Define the event details
+    const event = {
+        summary: taskName,
+        start: {
+            dateTime: taskDate.toISOString(),
+            timeZone: 'America/New_York' // Replace with user's timezone as needed
+        },
+        end: {
+            dateTime: new Date(taskDate.getTime() + 60 * 60 * 1000).toISOString(), // Example: 1-hour event
+            timeZone: 'America/New_York'
+        },
+    };
+
+    // Insert event into the user's primary calendar
+    gapi.client.calendar.events.insert({
+        calendarId: 'primary',
+        resource: event,
+    }).then(response => {
+        console.log('Event created:', response);
+    }).catch(error => console.log('Error creating event:', error));
+}
 
 
