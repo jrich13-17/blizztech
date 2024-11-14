@@ -1,18 +1,18 @@
 // Google API Client ID and API Key
 const CLIENT_ID = "92182400022-h5mb0g8l23bf9hjk8ops7pvemqkaurds.apps.googleusercontent.com";
-const API_KEY = "YOUR_API_KEY"; // Replace with actual API key
+const API_KEY = "YOUR_API_KEY"; // Replace with your actual API key
 
 // Google Calendar API settings
 const DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
 const SCOPES = "https://www.googleapis.com/auth/calendar.events";
 
 // Initialize Google API Client
-function handleClientLoad() {
-    gapi.load("client:auth2", initClient);
+async function handleClientLoad() {
+    await gapi.load("client:auth2", initClient);
 }
 
-function initClient() {
-    gapi.client.init({
+async function initClient() {
+    await gapi.client.init({
         apiKey: API_KEY,
         clientId: CLIENT_ID,
         discoveryDocs: DISCOVERY_DOCS,
@@ -26,8 +26,8 @@ function initClient() {
     });
 }
 
-// Load the client
-handleClientLoad();
+// Run client load when the page loads
+window.onload = handleClientLoad;
 
 // Function to Break Down Goal
 function breakDownGoal() {
@@ -45,6 +45,12 @@ function breakDownGoal() {
 
     const totalHours = parseFloat(prompt("How many hours do you think the whole goal will take to complete?"));
     const dailyHours = parseFloat(prompt("How many hours per day can you work on this goal?"));
+
+    if (isNaN(totalHours) || isNaN(dailyHours) || dailyHours <= 0) {
+        document.getElementById("task-output").innerText = "Please enter valid numbers for hours.";
+        return;
+    }
+
     const dailyTasks = Math.ceil(totalHours / dailyHours);
 
     document.getElementById("task-output").innerHTML = `
@@ -79,7 +85,7 @@ function addToGoogleCalendar(taskName, taskDate) {
     }).catch(error => console.log('Error creating event:', error));
 }
 
-// Example task division logic (customize as needed)
+// Divide the goal into tasks and add them to Google Calendar
 function divideGoalIntoTasks(goal, days, dailyTasks, startDate) {
     for (let i = 1; i <= days; i++) {
         const taskDate = new Date(startDate);

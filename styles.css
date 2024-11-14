@@ -1,4 +1,5 @@
 /* Basic Reset */
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
@@ -16,12 +17,9 @@ body {
     background-color: #f9f9f9;
     line-height: 1.6;
     min-height: 100vh;
-    margin: 0;
 }
 
-
 /* Header Styling */
-/* Header Styling for Personal Assistant Theme */
 header {
     background: linear-gradient(135deg, #4CAF50, #2e8b57);
     color: #fff;
@@ -32,7 +30,7 @@ header {
 }
 
 .logo {
-    width: 100px;
+    width: 80px; /* Adjust size as needed */
     border-radius: 50%;
     margin-bottom: 15px;
 }
@@ -49,25 +47,6 @@ header p {
     color: #e0e0e0;
 }
 
-
-.logo {
-    width: 80px; /* Adjust size as needed */
-    border-radius: 50%; /* Makes the logo circular for a friendly look */
-    margin-bottom: 10px;
-}
-
-header h1 {
-    font-size: 2.2em;
-    margin: 10px 0;
-    font-weight: bold;
-}
-
-header p {
-    font-size: 1.2em;
-    margin-bottom: 0;
-}
-
-}
 /* Form Styling */
 form {
     background-color: #fff;
@@ -105,22 +84,7 @@ input[type="text"]:focus, input[type="date"]:focus {
     outline: none;
 }
 
-
-label {
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-input[type="text"], input[type="date"] {
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    width: 100%;
-    font-size: 1em;
-}
-
+/* Button Styling */
 button {
     padding: 10px;
     background-color: #4CAF50;
@@ -147,10 +111,8 @@ button {
 
 .button-container button:hover {
     background: linear-gradient(135deg, #2e8b57, #4CAF50);
-    transform: translateY(-2px); /* Slight lift on hover */
+    transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
 }
 
 /* Task Output Styling */
@@ -186,6 +148,7 @@ footer {
     padding: 10px;
     width: 100%;
 }
+
 /* Premium Feature Section */
 #premium-feature {
     margin-top: 50px;
@@ -225,6 +188,8 @@ footer {
 #premium-feature button:hover {
     background: #4CAF50;
 }
+
+/* Comments Section */
 #comments {
     margin-top: 30px;
     padding: 20px;
@@ -248,4 +213,3 @@ footer {
     color: #555;
     margin-bottom: 20px;
 }
-

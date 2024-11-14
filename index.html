@@ -1,23 +1,33 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<head><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Goal Organizer</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="styles.css">
-	<link rel="manifest" href="manifest.json">
 
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Google API Client Library -->
+    <script src="https://apis.google.com/js/api.js"></script>
 </head>
-<body><script src="https://apis.google.com/js/api.js"></script>
 
-   <header>
-    <img src="logo.png" alt="Personal Assistant Logo" class="logo">
-    <h1>Your Personal Goal Assistant</h1>
-    <p>Helping you break down goals and keep you on track, one task at a time.</p>
-</header>
+<body>
+    <!-- Header Section -->
+    <header>
+        <img src="logo.png" alt="Personal Assistant Logo" class="logo">
+        <h1>Your Personal Goal Assistant</h1>
+        <p>Helping you break down goals and keep you on track, one task at a time.</p>
+    </header>
 
-
+    <!-- Main Content Section -->
     <main>
         <form id="goal-form">
             <label for="goal">Your Goal:</label>
@@ -29,58 +39,60 @@
             <label for="end-date">End Date:</label>
             <input type="date" id="end-date" name="end-date" required>
 
-           <div class="button-container">
-    <button type="button" onclick="breakDownGoal()">Break Down My Goal</button>
-</div>
-
+            <div class="button-container">
+                <button type="button" onclick="breakDownGoal()">Break Down My Goal</button>
+            </div>
         </form>
+        
+        <!-- Task Output Section -->
         <section id="task-output"></section>
     </main>
 
-    <script src="https://apis.google.com/js/api.js"></script>
-<script>
-    function authenticate() {
-        return gapi.auth2.getAuthInstance()
-            .signIn({scope: "https://www.googleapis.com/auth/calendar.events"})
-            .then(() => console.log("Sign-in successful"))
-            .catch(error => console.error("Error signing in", error));
-    }
+    <!-- Premium Feature Section -->
+    <section id="premium-feature">
+        <h2>Upgrade Your Experience</h2>
+        <p>For just $2.99 a month, we’ll help you stay on track by sending you daily tasks with the best times to work on them. No more daily planning—just focus on accomplishing your goals!</p>
+        <button onclick="showInterest()">Show My Tasks in My Calendar</button>
+    </section>
 
-    function loadClient() {
-        gapi.client.setApiKey("YOUR_API_KEY");
-        return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest")
-            .then(() => console.log("GAPI client loaded for API"))
-            .catch(error => console.error("Error loading GAPI client", error));
-    }
+    <!-- Comments Section -->
+    <section id="comments">
+        <h2>Leave Your Feedback</h2>
+        <p>Let us know what features you'd like to see added or improved!</p>
+        <div id="disqus_thread"></div>
+        <script>
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://https-jrich13-17-github-io-blizztech.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </section>
 
-    gapi.load("client:auth2", () => {
-        gapi.auth2.init({client_id: "YOUR_CLIENT_ID"});
-    });
-</script>
-<script src="app.js"></script>
-<section id="premium-feature">
-    <h2>Upgrade Your Experience</h2>
-    <p>Want a hassle-free way to achieve your goals? For just $2.99 a month, we’ll help you stay on track by sending you daily tasks, including the best times to work on them. No more daily planning—just focus on accomplishing your goals with a ready-made, optimized schedule.</p>
-    <button onclick="showInterest()">Show My Tasks in My Calendar</button>
-</section>
-<!-- Comment Section -->
-<section id="comments">
-    <h2>Leave Your Feedback</h2>
-    <p>Let us know what features you'd like to see added or improved!</p>
-    <div id="disqus_thread"></div>
+    <!-- JavaScript for Google API Authentication and Initialization -->
     <script>
-        (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://https-jrich13-17-github-io-blizztech.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
+        function authenticate() {
+            return gapi.auth2.getAuthInstance()
+                .signIn({scope: "https://www.googleapis.com/auth/calendar.events"})
+                .then(() => console.log("Sign-in successful"))
+                .catch(error => console.error("Error signing in", error));
+        }
+
+        function loadClient() {
+            gapi.client.setApiKey("YOUR_API_KEY");
+            return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest")
+                .then(() => console.log("GAPI client loaded for API"))
+                .catch(error => console.error("Error loading GAPI client", error));
+        }
+
+        gapi.load("client:auth2", () => {
+            gapi.auth2.init({client_id: "YOUR_CLIENT_ID"});
+        });
     </script>
-    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-</section>
 
-
-
+    <!-- External JavaScript File -->
+    <script src="app.js"></script>
 </body>
 </html>
-
