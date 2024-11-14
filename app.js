@@ -12,7 +12,7 @@ async function handleClientLoad() {
 }
 
 async function initClient() {
-    await gapi.client.init({
+    gapi.client.init({
         apiKey: API_KEY,
         clientId: CLIENT_ID,
         discoveryDocs: DISCOVERY_DOCS,
@@ -25,6 +25,7 @@ async function initClient() {
         console.error("Error during client initialization", error);
     });
 }
+
 
 // Run client load when the page loads
 window.onload = handleClientLoad;
